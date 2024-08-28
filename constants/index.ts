@@ -30,14 +30,14 @@ import noResult from "@/assets/images/no-result.png";
 import onboarding1 from "@/assets/images/onboarding1.jpeg";
 import onboarding2 from "@/assets/images/onboarding2.jpeg";
 import onboarding3 from "@/assets/images/onboarding3.jpeg";
-// import signUpCar from "@/assets/images/signup-car.png";
+import signUpCrop from "@/assets/images/signup-crop.png";
 
 export const images = {
   onboarding1,
   onboarding2,
   onboarding3,
   // getStarted,
-  // signUpCar,
+  signUpCrop,
   check,
   noResult,
   message,
