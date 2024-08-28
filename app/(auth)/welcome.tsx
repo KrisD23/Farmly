@@ -43,11 +43,11 @@ const Home = () => {
               resizeMode="contain"
             />
             <View className="flex flex-row items-center justify-center w-full mt-10">
-              <Text className="text-black text-3xl font-bold mx-10 text-center">
+              <Text className="text-black text-3xl font-bold mx-0 text-center">
                 {item.title}
               </Text>
             </View>
-            <Text className="text-md font-JakartaSemiBold text-center text-[#858585] mx-10 mt-3">
+            <Text className="text-md font-JakartaSemiBold text-center text-[#858585] mx-10 mt-2">
               {item.description}
             </Text>
           </View>
