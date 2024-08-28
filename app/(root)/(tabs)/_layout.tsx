@@ -64,33 +64,36 @@ export default function Layout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="cart"
-        options={{
-          title: "Cart",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon source={icons.list} focused={focused} />
-          ),
-        }}
-      />
+
       <Tabs.Screen
         name="my-account"
         options={{
           title: "My Account",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon source={icons.chat} focused={focused} />
+            <TabIcon source={icons.profile} focused={focused} />
           ),
         }}
       />
+
+      <Tabs.Screen
+        name="cart"
+        options={{
+          title: "Cart",
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon source={icons.cart} focused={focused} />
+          ),
+        }}
+      />
+
       <Tabs.Screen
         name="more"
         options={{
           title: "More",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon source={icons.profile} focused={focused} />
+            <TabIcon source={icons.more} focused={focused} />
           ),
         }}
       />

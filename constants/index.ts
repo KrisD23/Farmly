@@ -32,6 +32,10 @@ import onboarding2 from "@/assets/images/onboarding2.jpeg";
 import onboarding3 from "@/assets/images/onboarding3.jpeg";
 import signUpCrop from "@/assets/images/signup-crop.png";
 
+// other imports
+import cart from "@/assets/icons/cart.png";
+import more from "@/assets/icons/more.png";
+
 export const images = {
   onboarding1,
   onboarding2,
@@ -69,6 +73,9 @@ export const icons = {
   star,
   target,
   to,
+  //other
+  cart,
+  more,
 };
 
 export const onboarding = [
