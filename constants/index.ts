@@ -35,6 +35,7 @@ import signUpCrop from "@/assets/images/signup-crop.png";
 // other imports
 import cart from "@/assets/icons/cart.png";
 import more from "@/assets/icons/more.png";
+import appLogo from "@/assets/images/icon.png";
 
 export const images = {
   onboarding1,
@@ -45,6 +46,7 @@ export const images = {
   check,
   noResult,
   message,
+  appLogo,
 };
 
 export const icons = {
