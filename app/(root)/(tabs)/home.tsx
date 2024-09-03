@@ -1,7 +1,9 @@
 import FarmerCard from "@/components/FarmerCard";
 import ProductCard from "@/components/ProductCard";
 import { icons, images } from "@/constants";
+import { useSearchStore } from "@/store";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
+import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import {
   FlatList,
@@ -50,6 +52,7 @@ export default function Page() {
   // Handling the search bar logic
   const { user } = useUser();
   const [searchText, setSearchText] = useState("");
+
   const [imageIndex, setImageIndex] = useState(0);
   const currentImage = Images[`cover${imageIndex}`];
   useEffect(() => {
@@ -63,6 +66,9 @@ export default function Page() {
   const handleSearch = () => {
     // Handle search logic here, passing searchText to the function
     console.log("Search text:", searchText);
+    useSearchStore.getState().setSearch(searchText);
+    setSearchText("");
+    router.push("/(root)/find-product");
   };
 
   const handleChange = (text: string) => {
