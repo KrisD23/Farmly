@@ -17,7 +17,7 @@ const MyAccount = () => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          router.navigate("/(root)/my-earnings");
+          router.push("/(root)/my-earnings");
         }}
       >
         <Text>My Earnings</Text>

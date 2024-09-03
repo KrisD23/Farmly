@@ -6,6 +6,16 @@ const More = () => {
   return (
     <SafeAreaView>
       <Text>More</Text>
+      <Text>Articles</Text>
+      <Text>Schemes</Text>
+      <Text>News</Text>
+      <Text>Events</Text>
+      <Text>Help</Text>
+      <Text>FAQ</Text>
+      <Text>Support</Text>
+      <Text>Feedback</Text>
+      <Text>Customer Care</Text>
+      <Text>Contact Us</Text>
     </SafeAreaView>
   );
 };

@@ -156,8 +156,8 @@ export default function Page() {
         </View>
 
         {/* Articles */}
-        <View className="mt-10 h-[300px]">
-          <Text className="text-xl mb-1  font-JakartaBold">Articles :</Text>
+        <View className="mt-10 h-[130px]">
+          <Text className="text-xl mb-1  font-JakartaBold"> </Text>
         </View>
       </ScrollView>
     </View>
