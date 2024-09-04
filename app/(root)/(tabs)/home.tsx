@@ -1,7 +1,8 @@
 import FarmerCard from "@/components/FarmerCard";
 import ProductCard from "@/components/ProductCard";
+import * as Location from "expo-location";
 import { icons, images } from "@/constants";
-import { useSearchStore } from "@/store";
+import { useLocationStore, useSearchStore } from "@/store";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
@@ -52,6 +53,10 @@ export default function Page() {
   // Handling the search bar logic
   const { user } = useUser();
   const [searchText, setSearchText] = useState("");
+  const addess = useLocationStore();
+
+  const [hasPermissions, setHasPermissions] = useState(false);
+  const { setUserLocation } = useLocationStore();
 
   const [imageIndex, setImageIndex] = useState(0);
   const currentImage = Images[`cover${imageIndex}`];
@@ -63,12 +68,36 @@ export default function Page() {
     return () => clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setHasPermissions(false);
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+
+      const address = await Location.reverseGeocodeAsync({
+        latitude: location.coords?.latitude!,
+        longitude: location.coords?.longitude!,
+      });
+
+      setUserLocation({
+        latitude: location.coords?.latitude,
+        longitude: location.coords?.longitude,
+        address: `${address[0].name}, ${address[0].region}`,
+      });
+    })();
+  }, []);
+
   const handleSearch = () => {
     // Handle search logic here, passing searchText to the function
     console.log("Search text:", searchText);
     useSearchStore.getState().setSearch(searchText);
     setSearchText("");
     router.push("/(root)/find-product");
+    console.log(addess);
   };
 
   const handleChange = (text: string) => {
@@ -103,7 +132,7 @@ export default function Page() {
             Deliver to{" "}
             {user?.firstName ||
               user?.emailAddresses[0].emailAddress.split(`@`)[0]}{" "}
-            - Bhopal
+            {addess?.userAddress}
           </Text>
         </View>
 
