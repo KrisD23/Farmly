@@ -27,29 +27,5 @@ export const useLocationStore = create<LocationStore>((set) => ({
       userLongitude: longitude,
       userAddress: address,
     }));
-
-    // If driver is selected and now a new location is set, clear the selected driver
-    // const { selectedDriver, clearSelectedDriver } = useDriverStore.getState();
-    // if (selectedDriver) clearSelectedDriver();
   },
-
-  // setDestinationLocation: ({
-  //   latitude,
-  //   longitude,
-  //   address,
-  // }: {
-  //   latitude: number;
-  //   longitude: number;
-  //   address: string;
-  // }) => {
-  //   set(() => ({
-  //     destinationLatitude: latitude,
-  //     destinationLongitude: longitude,
-  //     destinationAddress: address,
-  //   }));
-
-  // If driver is selected and now a new location is set, clear the selected driver
-  // const { selectedDriver, clearSelectedDriver } = useDriverStore.getState();
-  // if (selectedDriver) clearSelectedDriver();
-  // },
 }));
